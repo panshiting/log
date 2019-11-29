@@ -47,6 +47,9 @@ Page({
   // 编辑
   handleEdit (event) {
     const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/addLogs/addLogs?id=${id}`,
+    })
   },
   // 删除
   handleDelete (event) {

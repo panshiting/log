@@ -1,16 +1,16 @@
 {
   "cloud": true,
   "pages": [
-    "pages/my/my",
     "pages/index/index",
     "pages/logs/logs",
     "pages/addLogs/addLogs",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
+    "pages/my/my",
+    "pages/chooseLib/chooseLib",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/addFunction/addFunction",
+    "pages/databaseGuide/databaseGuide",
+    "pages/storageConsole/storageConsole",
+    "pages/userConsole/userConsole"
   ],
   "window": {
     "navigationBarBackgroundColor": "#0e948a",
@@ -23,15 +23,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "日历",
+        "iconPath": "./images/calendar-no.png",
+        "selectedIconPath": "./images/calendar.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "列表"
+        "text": "列表",
+        "iconPath": "./images/book-no.png",
+        "selectedIconPath": "./images/book.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "./images/my-no.png",
+        "selectedIconPath": "./images/my.png"
       }
     ],
     "borderStyle": "white",

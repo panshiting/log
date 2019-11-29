@@ -10,13 +10,32 @@ Page({
     message: '',
     address: '',
     weather: '',
-    nickName: ''
+    nickName: '',
+    currentId: ''
   },
 
   handleTextarea (event) {
     const value = event.detail.value
     this.setData({
       message: value
+    })
+  },
+
+  getDetail () {
+    console.log(1212)
+    const db = wx.cloud.database()
+    // 查询当前用户所有的 counters
+    db.collection('mood').doc(this.data.currentId).get().then(res => {
+      this.setData({
+        message: res.data.message,
+        imageUrl: res.data.imageUrl
+      })
+      console.log(res)
+    }).catch(e => {
+      wx.showToast({
+        icon: 'none',
+        title: '查询记录失败'
+      })
     })
   },
   
@@ -50,11 +69,20 @@ Page({
   },
 
   // 保存
-  save () {
+  handleAdd () {
+    if (!this.data.message) {
+      wx.showToast({
+        icon: 'none',
+        title: '信息不能为空'
+      })
+      return
+    }
+    !this.data.currentId ? this.add() : this.update()
+  },
+  add () {
     const that = this
     const db = wx.cloud.database()
-    const mood = db.collection('mood')
-    mood.add({
+    db.collection('mood').add({
       data: {
         time: commonJs.getTime(new Date()),
         imageUrl: that.data.imageUrl,
@@ -62,18 +90,48 @@ Page({
         weather: that.data.weather,
         address: that.data.address,
         message: that.data.message
+      },
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        wx.showToast({
+          icon: 'none',
+          title: '新增成功'
+        })
+        wx.reLaunch({
+          url: '/pages/logs/logs'
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '新增失败'
+        })
       }
-    }).then(res => {
-      wx.showToast({
-        title: '新增成功',
-      })
-      wx.reLaunch({
-        url: '/pages/logs/logs'
-      })
-    }).catch(e => {
-      wx.showToast({
-        title: '提交失败',
-      })
+    })
+  },
+  update () {
+    const that = this
+    const db = wx.cloud.database()
+    db.collection('mood').doc(this.data.currentId).update({
+      data: {
+        message: that.data.message,
+        imageUrl: that.data.imageUrl
+      },
+      success: res => {
+        wx.showToast({
+          icon: 'none',
+          title: '修改成功'
+        })
+        wx.reLaunch({
+          url: '/pages/logs/logs'
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '修改成功'
+        })
+      }
     })
   },
 
@@ -81,7 +139,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    if (options && options.id) {
+      this.setData({
+        currentId: options.id
+      })
+      this.getDetail()
+    }
   },
 
   /**

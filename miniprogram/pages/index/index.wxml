@@ -5,8 +5,8 @@
     <calendar
       weeks-type="cn"
       cell-size="20"
-      show-header=false
-      show-more-days=true
+      :show-header=false
+      :show-more-days=true
       header-style="mood-header"
       calendar-style="mood-calendar"
       days-color="{{mood_days_color}}"

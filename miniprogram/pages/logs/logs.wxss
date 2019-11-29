@@ -13,6 +13,9 @@
   box-sizing: border-box;
   background-color: #fff;
 }
+.mood-item:last-child {
+  margin-bottom: 10px;
+}
 .mood-item-img {
   display: inline-block;
   width: 30%;

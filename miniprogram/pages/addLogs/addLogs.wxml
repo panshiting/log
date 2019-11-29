@@ -11,5 +11,7 @@
     bindinput='handleTextarea'
     value="{{message}}">
   </textarea>
-  <button class="save" bindtap='save'>保存</button>
+  <!-- <view class="btn-submit" bindtap="onAdd"> -->
+  <button class="btn-submit" bindtap="handleAdd">保存</button>
+  <!-- </view> -->
 </view>
