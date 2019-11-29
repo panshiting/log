@@ -1,0 +1,69 @@
+/* pages/logs/logs.wxss */
+
+/* 列表样式 */
+.mood-list {
+  width: 100%;
+  margin: 0 auto;
+}
+.mood-item {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.mood-item-img {
+  display: inline-block;
+  width: 30%;
+  height: 80px;
+  border-radius: 50%;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+.mood-item-content {
+  display: inline-block;
+  width: 70%;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+.mood-item-content:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.mood-item-time {
+  font-size: 10pt;
+  font-weight: bold;
+}
+.msg {
+  margin: 5px 0;
+  font-size: 9pt;
+  height: 50px;
+  color: #333333;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}
+.btn {
+  font-size: 9pt;
+  text-align: right;
+}
+.btn > text {
+  margin-left: 10px;
+  padding: 2px 8px;
+  line-height: 22px;
+  text-align: center;
+}
+.edit {
+  color: #0e948a;
+  border: 1px solid #0e948a;
+}
+.del {
+  color: #f35607;
+  border: 1px solid #f35607;
+}

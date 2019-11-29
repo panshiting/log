@@ -1,0 +1,15 @@
+<!--pages/addLogs/addLogs.wxml-->
+<view class="add-mood">
+  <view class="add-image" bindtap='changeImage'>
+    <image src="{{imageUrl}}"></image>
+    <text class="tip">点击更改图片</text>
+  </view>
+  <textarea
+    class="msg"
+    placeholder-class="place-class"
+    placeholder='想要说点什么呢'
+    bindinput='handleTextarea'
+    value="{{message}}">
+  </textarea>
+  <button class="save" bindtap='save'>保存</button>
+</view>
