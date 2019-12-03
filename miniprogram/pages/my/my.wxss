@@ -35,3 +35,19 @@
   border-bottom: 1px solid #eeeeee;
   color: #333333;
 }
+.login-btn {
+  z-index: 1;
+	position: fixed;
+  left: 30rpx;
+  bottom: 40rpx;
+  width: calc(100% - 60rpx);
+	padding: 0;
+	height: 90rpx;
+	line-height: 90rpx;
+	font-size: 32rpx;
+	color: #ffffff;
+	background-color: #0e948a;
+	box-shadow: 0rpx 11rpx 21rpx 0rpx 
+		rgba(55, 123, 241, 0.25);
+	border-radius: 4rpx;
+}

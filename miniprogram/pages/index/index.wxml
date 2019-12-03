@@ -3,15 +3,11 @@
 <view class="container">
   <view class="mood">
     <calendar
-      weeks-type="cn"
-      cell-size="20"
-      :show-header=false
-      :show-more-days=true
-      header-style="mood-header"
-      calendar-style="mood-calendar"
-      days-color="{{mood_days_color}}"
-      binddayClick="dayClick"
-    />
+    weeks-type="cn"
+    cell-size="20"
+    :show-more-days="true"
+    days-color="{{mood_days_color}}"
+    binddayClick="dayClick" />
   </view>
   <view class="info">
     <view>{{filter.dateFormat(currentWeek)}}</view>
@@ -22,3 +18,4 @@
 		<image class="img" src="../../images/icon_plus.png"></image>
 	</button>
 </view>
+

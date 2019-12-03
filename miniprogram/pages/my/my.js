@@ -6,37 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {
-      nickName: ''
-    }
+    avatarUrl: '',
+    userInfo: {}
   },
 
   // 授权登录
-  authLogin () {
-    wx.showLoading({title: '加载中'})
-    let that = this
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        console.log(res)
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              console.log(res)
-              app.globalData.avatarUrl = res.userInfo.avatarUrl,
-              app.globalData.userInfo = res.userInfo
-              that.setData({
-                avatarUrl: app.globalData.avatarUrl,
-                userInfo: app.globalData.userInfo
-              })
-              wx.hideLoading()
-            }
-          })
-        }
-      }
-    })
+  login () {
+    app.authLogin()
+    if (userInfo && userInfo.nickName) {
+
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -56,7 +35,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      avatarUrl: app.globalData.avatarUrl ? app.globalData.avatarUrl : './user-unlogin.png',
+      userInfo: app.globalData.userInfo
+    })
   },
 
   /**
