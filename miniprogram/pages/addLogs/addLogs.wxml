@@ -1,16 +1,23 @@
 <!--pages/addLogs/addLogs.wxml-->
 <view class="add-mood">
-  <view class="add-image" bindtap='changeImage'>
-    <image src="{{imageUrl}}"></image>
-    <text class="tip">点击更改图片</text>
-  </view>
   <textarea
     class="msg"
     placeholder-class="place-class"
-    placeholder='想要说点什么呢'
+    placeholder='此时此刻你想要写点什么...'
     bindinput='handleTextarea'
     value="{{message}}">
   </textarea>
+  <view class="image-group">
+    <view class="add-image" wx:for="{{imageUrl}}" wx:key="idx" wx:for-index="idx" wx:for-item="itemUrl" bindtap="handleViewImage" data-url="{{itemUrl}}">
+      <image src="{{itemUrl}}"></image>
+      <view class="del-tag" catchtap="handleDelImg" data-index="{{idx}}">
+        <image src="../../images/icon_img-del.png"></image>
+      </view>
+    </view>
+    <view class="add-image" bindtap='changeImage'>
+      <image src="../../images/btn_upload.png"></image>
+    </view>
+  </view>
   <!-- <view class="btn-submit" bindtap="onAdd"> -->
   <button class="btn-submit" bindtap="handleAdd">保存</button>
   <!-- </view> -->

@@ -1,9 +1,9 @@
 {
   "cloud": true,
   "pages": [
-    "pages/index/index",
     "pages/logs/logs",
     "pages/addLogs/addLogs",
+    "pages/index/index",
     "pages/my/my",
     "pages/chooseLib/chooseLib",
     "pages/deployFunctions/deployFunctions",
@@ -13,11 +13,11 @@
     "pages/userConsole/userConsole"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#0e948a",
+    "navigationBarBackgroundColor": "#509aff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "日志",
     "backgroundTextStyle": "light",
-    "backgroundColorBottom": "red"
+    "backgroundColorBottom": "white"
   },
   "tabBar": {
     "list": [
@@ -41,7 +41,7 @@
       }
     ],
     "borderStyle": "white",
-    "selectedColor": "#0e948a",
+    "selectedColor": "#509aff",
     "color": "#333333"
   },
   "networkTimeout": {

@@ -12,7 +12,3 @@ button::after {
   border: none;
 }
 
-/deep/ .calendar--calendar-weekday {
-  width: 20px;
-  height: 20px;
-}

@@ -39,7 +39,7 @@
   width: 100rpx;
   height: 100rpx;
   text-align: center;
-  background-color: #0e948a;
+  background-color: #509aff;
   box-shadow: 0 11rpx 21rpx 0 rgba(55, 123, 241, 0.25);
   border-radius: 50rpx;
   display: flex;

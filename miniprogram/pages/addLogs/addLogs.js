@@ -6,12 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageUrl: '../../images/logo.jpg',
+    imageUrl: [],
     message: '',
     address: '',
     weather: '',
     nickName: '',
     currentId: ''
+  },
+  handleViewImage (e) {
+    console.log(e)
+    wx.previewImage({
+      urls: this.data.imageUrl,
+      current: e.currentTarget.dataset.url
+    })
+  },
+  handleDelImg (e) {
+    let that = this
+    console.log(e)
+    wx.showModal({
+      title: '提示',
+      content: '确定删除？',
+      success(res) {
+        if (res.confirm) {
+          const image = that.data.imageUrl
+          image.splice(e.currentTarget.dataset.index, 1)
+          that.setData({
+            imageUrl: image
+          })
+        }
+      }
+    })
   },
 
   handleTextarea (event) {
@@ -22,7 +46,6 @@ Page({
   },
 
   getDetail () {
-    console.log(1212)
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
     db.collection('mood').doc(this.data.currentId).get().then(res => {
@@ -30,7 +53,6 @@ Page({
         message: res.data.message,
         imageUrl: res.data.imageUrl
       })
-      console.log(res)
     }).catch(e => {
       wx.showToast({
         icon: 'none',
@@ -44,11 +66,10 @@ Page({
     const that = this
     wx.chooseImage({
       count: 1,
-      sizeType: ['compressed'],
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
       success: function(res) {
-        wx.showLoading({
-          title: '上传中...',
-        })
+        wx.showLoading({title: '上传中...'})
         const filePath = res.tempFilePaths[0]
         const name = Math.random() * 1000000
         const cloudPath = 'picture/' + name + filePath.match(/\.[^.]+?$/)[0]
@@ -57,11 +78,13 @@ Page({
           filePath
         }).then(res => {
           wx.hideLoading()
+          const image = [res.fileID]
           that.setData({
-            imageUrl: res.fileID
+            imageUrl: [...that.data.imageUrl, ...image]
           })
           console.log(that.data.imageUrl)
         }).catch(err => {
+          wx.hideLoading()
           console.log('图片上传失败：', err)
         })
       },

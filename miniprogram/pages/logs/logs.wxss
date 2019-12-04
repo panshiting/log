@@ -63,8 +63,8 @@ image {
   text-align: center;
 }
 .edit {
-  color: #0e948a;
-  border: 1px solid #0e948a;
+  color: #509aff;
+  border: 1px solid #509aff;
 }
 .del {
   color: #f35607;

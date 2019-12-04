@@ -4,7 +4,8 @@
     <li class="mood-item" wx:for="{{moodList}}" wx:key="{{index}}">
       <view>
         <view class="mood-item-img">
-          <image src="{{item.imageUrl}}"></image>
+          <image wx:if="{{item.imageUrl && item.imageUrl.length > 0}}" src="{{item.imageUrl[0]}}"></image>
+          <image wx:else src="../../images/logo.jpg"></image>
         </view>
         <view class="mood-item-content">
           <view class="mood-item-time">

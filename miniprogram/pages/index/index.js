@@ -23,7 +23,7 @@ Page({
         month: 'current',
         day: new Date().getDate(),
         color: '#2a3948',
-        background: '#d9d0b2'
+        background: '#FFB23B'
       }
     ],
     address: '',
