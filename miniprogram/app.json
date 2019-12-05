@@ -1,22 +1,18 @@
 {
   "cloud": true,
   "pages": [
-    "pages/logs/logs",
+    "pages/logList/logList",
+    "pages/logDetail/logDetail",
     "pages/addLogs/addLogs",
     "pages/index/index",
-    "pages/my/my",
-    "pages/chooseLib/chooseLib",
-    "pages/deployFunctions/deployFunctions",
-    "pages/addFunction/addFunction",
-    "pages/databaseGuide/databaseGuide",
-    "pages/storageConsole/storageConsole",
-    "pages/userConsole/userConsole"
+    "pages/my/my"
   ],
   "window": {
+    "backgroundColor": "#f9f9f9",
     "navigationBarBackgroundColor": "#509aff",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "日志",
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "backgroundColorBottom": "white"
   },
   "tabBar": {
@@ -28,7 +24,7 @@
         "selectedIconPath": "./images/calendar.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/logList/logList",
         "text": "列表",
         "iconPath": "./images/book-no.png",
         "selectedIconPath": "./images/book.png"

@@ -1,8 +1,8 @@
 <!--pages/logs/logs.wxml-->
 <view>
   <ul class="mood-list">
-    <li class="mood-item" wx:for="{{moodList}}" wx:key="{{index}}">
-      <view>
+    <li class="mood-warp" wx:for="{{moodList}}" wx:key="{{index}}" bindtap="handleDetail"  data-id="{{item._id}}">
+      <view class="mood-item">
         <view class="mood-item-img">
           <image wx:if="{{item.imageUrl && item.imageUrl.length > 0}}" src="{{item.imageUrl[0]}}"></image>
           <image wx:else src="../../images/logo.jpg"></image>
@@ -11,14 +11,12 @@
           <view class="mood-item-time">
             <text>{{item.time}}</text>
           </view>
-          <view class="msg">
-            <text>{{item.message}}</text>
-          </view>
+          <view class="msg">{{item.message}}</view>
         </view>
       </view>
       <view class="btn">
-        <text class="edit" bindtap="handleEdit" data-id="{{item._id}}">修改</text>
-        <text class="del" bindtap="handleDelete" data-id="{{item._id}}">删除</text>
+        <text class="edit" catchtap="handleEdit" data-id="{{item._id}}">修改</text>
+        <text class="del" catchtap="handleDelete" data-id="{{item._id}}">删除</text>
       </view>
     </li>
   </ul>

@@ -1,0 +1,9 @@
+<!--pages/logDetail/logDetail.wxml-->
+<view class="log-detail">
+  <view class="msg">{{logItem.message ? logItem.message : ''}}</view>
+  <view wx:if="{{logItem.imageUrl && logItem.imageUrl.length > 0}}">
+    <view wx:for="{{logItem.imageUrl}}" class="image-item" bindtap="handleViewImage" wx:for-item="itemUrl" data-url="{{itemUrl}}">
+      <image src="{{itemUrl}}"></image>
+    </view>
+  </view>
+</view>
