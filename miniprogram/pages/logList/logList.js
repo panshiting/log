@@ -28,10 +28,11 @@ Page({
     windpower: '',
     moodList: [],
     page: 1,
-    pageSize: 10
+    pageSize: 10,
+    openid: ''
   },
 
-  onLoad: function (options) {
+  onLoad: function () {
     this.getList()
   },
 
@@ -50,7 +51,6 @@ Page({
       this.setData({
         page: this.data.page + 1
       }, () => {
-        console.log(this.data)
         this.getList()
       })
     }
@@ -62,6 +62,7 @@ Page({
       name: 'pagination',
       data: {
         dbName: 'mood',
+        filter: { '_openid': app.openid},
         page: this.data.page,
         pageSize: this.data.pageSize
       }

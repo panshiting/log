@@ -9,7 +9,7 @@
     </view>
   </view>
   <view class="content">
-    <view class="content-item">
+    <view class="content-item" bindtap="goToInstruction">
       <text>说明</text>
     </view>
     <view class="content-item">

@@ -1,7 +1,7 @@
 /* pages/addLogs/addLogs.wxss */
 .add-mood {
   position: relative;
-  padding: 20px;
+  padding: 40rpx;
 }
 .image-group {
   display: flex;
@@ -9,9 +9,9 @@
 }
 .add-image {
   position: relative;
-  margin: 15px 20px 0 0;
-  width: 70px;
-  height: 70px;
+  margin: 30rpx 40rpx 0 0;
+  width: 140rpx;
+  height: 140rpx;
 }
 .add-image image, .del-tag image {
   width: 100%;
@@ -27,7 +27,7 @@
 .tip {
   display: inline-block;
   position: absolute;
-  top: 100px;
+  top: 200rpx;
   left: 50%;
   transform: translateX(-50%);
   color: #ebebec;
@@ -37,15 +37,14 @@
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
-  height: 120px;
+  height: 400rpx;
   overflow: hidden;
-  color: #666666;
 }
 .place-class {
   display: inline-block;
   font-size: 14px;
-  color: #999999;
-  margin: 5px;
+  color: #666666;
+  margin: 10rpx;
 }
 .btn-submit {
 	z-index: 1;

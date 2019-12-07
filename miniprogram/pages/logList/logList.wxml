@@ -1,6 +1,6 @@
 <!--pages/logs/logs.wxml-->
 <view>
-  <ul class="mood-list">
+  <ul wx:if="{{moodList && moodList.length > 0}}" class="mood-list">
     <li class="mood-warp" wx:for="{{moodList}}" wx:key="{{index}}" bindtap="handleDetail"  data-id="{{item._id}}">
       <view class="mood-item">
         <view class="mood-item-img">
@@ -20,4 +20,10 @@
       </view>
     </li>
   </ul>
+  <view wx:else class="empty-warp">
+    <view class="empty">
+      <image src="../../images/empty.png"></image>
+    </view>
+    <text class="tip">还没有写日志，快去写一条吧~</text>
+  </view>
 </view>

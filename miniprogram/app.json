@@ -1,10 +1,11 @@
 {
   "cloud": true,
   "pages": [
-    "pages/logList/logList",
-    "pages/logDetail/logDetail",
-    "pages/addLogs/addLogs",
     "pages/index/index",
+    "pages/instruction/instruction",
+    "pages/logList/logList",
+    "pages/addLogs/addLogs",
+    "pages/logDetail/logDetail",
     "pages/my/my"
   ],
   "window": {

@@ -3,14 +3,13 @@
 <view class="container">
   <view class="mood">
     <calendar
-    weeks-type="cn"
-    cell-size="20"
-    :show-more-days="true"
-    days-color="{{mood_days_color}}"
-    binddayClick="dayClick" />
+      weeks-type="cn"
+      show-more-days="{{true}}"
+      days-color="{{mood_days_color}}"
+      binddayClick="dayClick" />
   </view>
   <view class="info">
-    <view>{{filter.dateFormat(currentWeek)}}</view>
+    <!-- <view>{{filter.dateFormat(currentWeek)}}</view> -->
     <view>{{address}} {{weather}} {{temperature}}℃</view>
     <view>{{winddirection}} {{windpower}}</view>
   </view>

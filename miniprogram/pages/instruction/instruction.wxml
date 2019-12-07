@@ -1,0 +1,5 @@
+<!--pages/instruction/instruction.wxml-->
+<view class="contain">
+  <view>本程序是一款极简型的个人日志记录，其中使用了极点日历插件和云开发，所记录内容不会被暴露，知情权只有使用者本人，请放心使用。</view>
+  <view>目前只供个人操作，纯属娱乐开发。</view>
+</view>

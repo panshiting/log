@@ -4,6 +4,7 @@
     class="msg"
     placeholder-class="place-class"
     placeholder='此时此刻你想要写点什么...'
+    maxlength="{{1000}}"
     bindinput='handleTextarea'
     value="{{message}}">
   </textarea>

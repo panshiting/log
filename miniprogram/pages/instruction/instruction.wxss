@@ -1,0 +1,10 @@
+/* pages/instruction/instruction.wxss */
+.contain {
+  height: 100%;
+  background-color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  text-indent: 32px;
+  padding: 30rpx;
+}

@@ -10,11 +10,6 @@ Page({
     userInfo: {}
   },
 
-  // 授权登录
-  login () {
-    app.authLogin()
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -22,6 +17,17 @@ Page({
     this.setData({
       avatarUrl: app.globalData.avatarUrl ? app.globalData.avatarUrl : './user-unlogin.png',
       userInfo: app.globalData.userInfo
+    })
+  },
+
+  // 授权登录
+  login () {
+    app.authLogin()
+  },
+
+  goToInstruction () {
+    wx.navigateTo({
+      url: '/pages/instruction/instruction'
     })
   }
 })
